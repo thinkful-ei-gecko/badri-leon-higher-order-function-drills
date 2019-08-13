@@ -96,12 +96,12 @@ totalSteps.forEach(step => {
 let input = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
 let inputArray = input.split(' ');
 
-const reducer = function(accumulator, currentValue) { 
+const reducer = (accumulator, currentValue) => { 
   if (currentValue.length === 3) { 
-    accumulator + ' ';
+    return accumulator + ' ';
   }
-  else { accumulator + 'p'; }
-  return accumulator;
+  else { return accumulator + currentValue[currentValue.length-1].toUpperCase(); }
+  
 };
 
-console.log(inputArray.reduce(reducer));
+console.log(inputArray.reduce(reducer, ''));
