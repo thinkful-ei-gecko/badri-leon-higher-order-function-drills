@@ -59,12 +59,33 @@ function hazardWarningCreator(typeOfWarning) {
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
 const floodWarning = hazardWarningCreator('Water everywhere guys!!!!');
 const fireWarning = hazardWarningCreator('It\'s hot ya\'ll');
+/*
 rocksWarning('Pacific Ocean');
 rocksWarning('Los Angeles');
 floodWarning('Michigan');
 floodWarning('Carlsbad');
 floodWarning('North Carolina');
-/*fireWarning('It\'s REALLY hot ya\'ll');
+fireWarning('It\'s REALLY hot ya\'ll');
 fireWarning('It\'s LIKE DANG HOT hot ya\'ll');
 fireWarning('It\'s  -what are you doing outside- hot ya\'ll');
 */
+
+const turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+let filteredMovements = turtleMovements.filter(step => {
+  if (step[0] >= 0 && step[1] >= 0) {
+    return step;
+  }
+});
+console.log(filteredMovements);
+let totalSteps = turtleMovements.map(step => Math.abs(step[0]) + Math.abs(step[1]));
+console.log(totalSteps);
+let i = 0;
+totalSteps.forEach(step => {
+  i += 1;
+  if (step === 1){
+    console.log(`Movement #${i}: ${step} step`) 
+  }
+  else {
+  console.log(`Movement #${i}: ${step} steps`) 
+  }
+});
