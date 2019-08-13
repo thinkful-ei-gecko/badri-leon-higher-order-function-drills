@@ -68,7 +68,7 @@ floodWarning('North Carolina');
 fireWarning('It\'s REALLY hot ya\'ll');
 fireWarning('It\'s LIKE DANG HOT hot ya\'ll');
 fireWarning('It\'s  -what are you doing outside- hot ya\'ll');
-*/
+*//*
 
 const turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 let filteredMovements = turtleMovements.filter(step => {
@@ -89,3 +89,19 @@ totalSteps.forEach(step => {
   console.log(`Movement #${i}: ${step} steps`) 
   }
 });
+
+*/
+
+
+let input = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+let inputArray = input.split(' ');
+
+const reducer = function(accumulator, currentValue) { 
+  if (currentValue.length === 3) { 
+    accumulator + ' ';
+  }
+  else { accumulator + 'p'; }
+  return accumulator;
+};
+
+console.log(inputArray.reduce(reducer));
